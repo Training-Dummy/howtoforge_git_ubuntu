@@ -55,33 +55,3 @@ https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/
       printf("hello world");
       return 0;
   }
-  ```
-
-- Add the files to the index:
-
-  ```bash
-  git add README
-  git add sample.c
-  ```
-
-- Commit the changes with a message:
-
-  ```bash
-  git commit -m "Initial commit"
-  ```
-
-- Create a repository on GitHub with the same name as your local repository (e.g., "Mytest"). 
-  - Then, connect your local repository to the GitHub repository (Replace `'user_name'` with your GitHub username):
-
-  ```bash
-  git remote add origin https://github.com/user_name/Mytest.git
-  ```
-
-- Push the local repository contents to GitHub
-
-  ```bash
-  git push origin master
-  ```
-
-
-
