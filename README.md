@@ -31,8 +31,12 @@ https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/
   Initialized empty Git repository in /home/user/Mytest/.git/
   ```
 
+- Check the current state of the working directory and the staging area.
+  - Shows which changes have been staged, which haven’t, and which files aren’t being tracked by Git.
+  ```bash
+  git status
+  ```
 
-## 4. Creating a README File
 
 - Create a README file to describe the repository:
 
@@ -41,8 +45,6 @@ https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/
   # Add some text, example:
   This is a git repo
   ```
-
-## 5. Adding Files to the Index
 
 - Create and add files to the index. For example, create a `sample.c` file:
 
@@ -76,7 +78,6 @@ https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/
   ```
 
 - Push the local repository contents to GitHub
-  - - Enter your GitHub login credentials when prompted.
 
   ```bash
   git push origin master
