@@ -1,5 +1,11 @@
 # Setting Up Git and GitHub on Ubuntu Linux
-Tutorials: [HowToForge | Installing and using Git and GitHub on Ubuntu Linux](https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/) | [TOP | Setting up Git](https://www.theodinproject.com/lessons/foundations-setting-up-git#introduction) 
+
+Tutorials: [HowToForge | Installing and using Git and GitHub on Ubuntu Linux](https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/) | [TOP | Setting up Git](https://www.theodinproject.com/lessons/foundations-setting-up-git#introduction) | Repo: [Training-Dummy/howtoforge_git_ubuntu](https://github.com/Training-Dummy/howtoforge_git_ubuntu)
+
+
+## Contents
++ [Setting Up Git and GitHub on Ubuntu Linux](#setting-up-git-and-github-on-ubuntu-linux)
++ [Creating an SSH Key](#creating-an-ssh-key)
 
 - Install Git
   ```bash
@@ -11,21 +17,26 @@ Tutorials: [HowToForge | Installing and using Git and GitHub on Ubuntu Linux](ht
   ```bash
   git config --global user.name "Your Name"
   git config --global user.email "your.email@example.com"
-  # Verify
+  ```
+
+  - Verify configuration
+  
+  ```bash
   git config --get user.name
   git config --get user.email
   # List all settings
   git config --list
   ```
 - Create a local repository `myTest` and change the current working directory to `myTest`:
-  - This will create a local folder `Mytest` and a hidden subdirectory named `.git`
+  
   ```bash
   mkdir myTest && cd myTest
   ```
 
-  - Create hidden `.git` subdirectory in the current working directory
-    - Contains subdirectories for objects, refs, and template files
-    - A HEAD file is also created which will point to the currently checked out commit
+- Create a (hidden) `.git` subdirectory in the current working directory
+  - Contains subdirectories for objects, refs, and template files
+  - A HEAD file is also created which will point to the currently checked out commit
+  
   ```bash
   git init
   ```
@@ -84,14 +95,17 @@ Tutorials: [HowToForge | Installing and using Git and GitHub on Ubuntu Linux](ht
 
 - Push the local repository contents to GitHub
   - The first time running this command, you need the `--set-upstream` flag to link the local `master` branch to the `master` branch on remote repository (`origin`)
-  - You may get a 'permission denied' error when pushing to GitHub if SSH keys aren't set properly (See [Creating an SSH Key](#creating-an-ssh-key))
 
   ```bash
-  # For first push (Can also use `git push -u origin master`)
+  # Can also use `git push -u origin master`
   git push --set-upstream origin master
-  # For subsequent pushes
+  ```
+
+  - For subsequent pushes
+  ```bash
   git push origin master
   ```
+  - You may get a `permission denied` error when pushing to GitHub if SSH keys aren't set properly (See [Creating an SSH Key](#creating-an-ssh-key))
 
 - Enable colorful output with git
 
@@ -100,7 +114,7 @@ Tutorials: [HowToForge | Installing and using Git and GitHub on Ubuntu Linux](ht
   ```
 
 ## Creating an SSH Key
-An SSH key is a cryptographically secure identifier. It’s like a really long password used to identify your machine. GitHub uses SSH keys to allow you to upload to your repository without having to type in your username and password every time. [Create an SSH key](https://www.theodinproject.com/lessons/foundations-setting-up-git#step-23-create-an-ssh-key)
+An SSH key is a cryptographically secure identifier. It’s like a really long password used to identify your machine, which can be used by GitHub without having to type in your username and password every time. [Create an SSH key](https://www.theodinproject.com/lessons/foundations-setting-up-git#step-23-create-an-ssh-key)
 
 - **Check for Existing SSH Keys**
   [Checking for Existing SSH Keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)
