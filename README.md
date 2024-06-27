@@ -1,5 +1,4 @@
 # Setting Up Git and GitHub on Ubuntu Linux
-
 Tutorials: [HowToForge | Installing and using Git and GitHub on Ubuntu Linux](https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/) | [TOP | Setting up Git](https://www.theodinproject.com/lessons/foundations-setting-up-git#introduction) 
 
 - Install Git
@@ -95,9 +94,10 @@ Tutorials: [HowToForge | Installing and using Git and GitHub on Ubuntu Linux](ht
   ```
 
 - Enable colorful output with git
+
   ```bash
   git config --global color.ui auto
-```
+  ```
 
 ## Creating an SSH Key
 An SSH key is a cryptographically secure identifier. It’s like a really long password used to identify your machine. GitHub uses SSH keys to allow you to upload to your repository without having to type in your username and password every time. [Create an SSH key](https://www.theodinproject.com/lessons/foundations-setting-up-git#step-23-create-an-ssh-key)
@@ -105,6 +105,7 @@ An SSH key is a cryptographically secure identifier. It’s like a really long p
 - **Check for Existing SSH Keys**
   [Checking for Existing SSH Keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)
   - Check for the presence of Ed25519 algorithm SSH keys:
+
   ```bash
   ls ~/.ssh/id_ed25519.pub
   ```
