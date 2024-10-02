@@ -2,15 +2,33 @@
 
 Tutorials: [HowToForge | Installing and using Git and GitHub on Ubuntu Linux](https://www.howtoforge.com/tutorial/install-git-and-github-on-ubuntu/) | [TOP | Setting up Git](https://www.theodinproject.com/lessons/foundations-setting-up-git#introduction) | Repo: [Training-Dummy/howtoforge_git_ubuntu](https://github.com/Training-Dummy/howtoforge_git_ubuntu)
 
-
 ## Contents
-+ [Setting Up Git and GitHub on Ubuntu Linux](#setting-up-git-and-github-on-ubuntu-linux)
-+ [Creating an SSH Key](#creating-an-ssh-key)
++ [Install Git](#install-git)
+  + [Windows](#windows)
+  + [Linux](#linux)
++ [Configure GitHub](#configure-github)
++ [Creating a local repository](#creating-a-local-repository)
++ [Adding repository files to an index](#adding-repository-files-to-an-index)
++ [Committing changes made to the index](#committing-changes-made-to-the-index)
++ [Creating a repository on GitHub](#creating-a-repository-on-github)
++ [Pushing files from a local repository to a GitHub repository](#pushing-files-from-a-local-repository-to-a-github-repository)
 
+
+## Install Git
+
+### Windows
+- Install Git using [WSL (Windows Subsystem for Linux)](https://learn.microsoft.com/en-us/windows/wsl/install)
+  - Once setup, Git can be installed using the Linux package manager
+- Alternatively, install [Git for Windows](https://gitforwindows.org/), which provides Git Bash (terminal emulator for running Git commands)
+
+### Linux
+https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 - Install Git
   ```bash
   sudo apt install git
   ```
+
+## Configure GitHub
 - Configure GitHub:
   - Replace `"Your name"` and `"your.email@example.com"` with your personal details (including the quotes) to link your local Git profile with GitHub
 
@@ -27,6 +45,8 @@ Tutorials: [HowToForge | Installing and using Git and GitHub on Ubuntu Linux](ht
   # List all settings
   git config --list
   ```
+
+## Creating a local repository
 - Create a local repository `myTest` and change the current working directory to `myTest`:
   
   ```bash
@@ -60,7 +80,11 @@ Tutorials: [HowToForge | Installing and using Git and GitHub on Ubuntu Linux](ht
   nano README.md
   # Add some text, example:
   This is a git repo
+  # Save the file by pressing CTRL + O, then press Enter
+  # Exit nano by pressing CTRL + X
   ```
+
+## Adding repository files to an index
 
 - Create and add files to the index. For example, create a `sample.c` file:
 
@@ -79,13 +103,13 @@ Tutorials: [HowToForge | Installing and using Git and GitHub on Ubuntu Linux](ht
   git add README
   git add sample.c
   ```
-
+## Committing changes made to the index
 - Commit the changes with a message:
 
   ```bash
   git commit -m "Initial commit"
   ```
-
+##  Creating a repository on GitHub
 - Create a repository on GitHub with the same name as your local repository (e.g., "Mytest").
   - Then, connect your local repository to the GitHub repository (Replace `'user_name'` with your GitHub username):
 
@@ -93,54 +117,30 @@ Tutorials: [HowToForge | Installing and using Git and GitHub on Ubuntu Linux](ht
   git remote add origin https://github.com/user_name/Mytest.git
   ```
 
+## Pushing files from a local repository to a GitHub repository
 - Push the local repository contents to GitHub
   - The first time running this command, you need the `--set-upstream` flag to link the local `master` branch to the `master` branch on remote repository (`origin`)
 
-  ```bash
-  # Can also use `git push -u origin master`
-  git push --set-upstream origin master
-  ```
+```bash
+# Can also use `git push -u origin master`
+git push --set-upstream origin master
+
+# Note: Some repositories may use 'main' as the default branch instead of 'master'.
+# In that case, use the following command:
+# git push --set-upstream origin main
+```
 
   - For subsequent pushes
   ```bash
-  git push origin master
+git push origin master
+
+# Or if your default branch is 'main':
+# git push origin main
   ```
-  - You may get a `permission denied` error when pushing to GitHub if SSH keys aren't set properly (See [Creating an SSH Key](#creating-an-ssh-key))
+  - You may get a `permission denied` error when pushing to GitHub if SSH keys aren't set properly (See [[SSH]])
 
 - Enable colorful output with git
 
   ```bash
   git config --global color.ui auto
-  ```
-
-## Creating an SSH Key
-An SSH key is a cryptographically secure identifier. It’s like a really long password used to identify your machine, which can be used by GitHub without having to type in your username and password every time. [Create an SSH key](https://www.theodinproject.com/lessons/foundations-setting-up-git#step-23-create-an-ssh-key)
-
-- **Check for Existing SSH Keys**
-  [Checking for Existing SSH Keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)
-  - Check for the presence of Ed25519 algorithm SSH keys:
-
-  ```bash
-  ls ~/.ssh/id_ed25519.pub
-  ```
-  - An error indicates you do not have an existing SSH key pair in the default location.
-
-- **Generate a New SSH Key on Your Local Machine**
-  [Generating a New SSH Key and Adding it to the SSH Agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-  - Run the following command in the terminal to create a new SSH key using your GitHub email as a label:
-  ```bash
-  ssh-keygen -t ed25519 -C "<youremail>"
-  ```
-
-  ```
-  > Generating public/private ed25519 key pair.
-  ```
-
-- **Link SSH Key with GitHub**
-  - Add the public key to your account on [GitHub.com](https://github.com/chxtio) to enable authentication for Git operations over SSH.
-    - In GitHub, navigate to **Settings -> SSH and GPG keys -> New SSH Key**.
-    - Name the key with a useful description of where it came from.
-    - Copy the public SSH key from the terminal and paste it into the GitHub key section:
-  ```bash
-  cat ~/.ssh/id_ed25519.pub
   ```
