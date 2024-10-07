@@ -169,6 +169,10 @@ git push origin master
   ```bash
   ssh-keygen -t ed25519 -C "<youremail>"
   ```
+  - When you're prompted to "Enter a file in which to save the key", you can press Enter to accept the default file location
+  ```
+  > Enter file in which to save the key (/c/Users/YOU/.ssh/id_ALGORITHM):[Press enter]
+  ```
   ```
   > Generating public/private ed25519 key pair.
   ```
