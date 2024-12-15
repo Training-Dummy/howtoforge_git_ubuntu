@@ -23,10 +23,12 @@ Content
 ### Installing on Windows
 
 - Install [Git for Windows](https://gitforwindows.org/), which provides Git Bash (terminal emulator for running Git commands)
-- Or, install using Windows Powershell
-```bash
-winget install --id Git.Git -e --source winget
-```
+  
+~~- Or, install using Windows Powershell~~
+~~```bash~~
+~~winget install --id Git.Git -e --source winget~~
+~~```~~
+
 - You can also install Linux for Windows via [WSL (Windows Subsystem for Linux)](https://learn.microsoft.com/en-us/windows/wsl/install)
   - Once setup, Git can be installed using the Linux package manager
 
@@ -155,7 +157,9 @@ git push origin master
 ---
 ## Creating an SSH Key
 [Create an SSH key](https://www.theodinproject.com/lessons/foundations-setting-up-git#step-23-create-an-ssh-key)
- An SSH key is a cryptographically secure identifier. It’s like a really long password used to identify your machine, which can be used by GitHub without having to type in your username and password every time.
+![ssh diagram](https://www.ssh.com/hubfs/Imported_Blog_Media/SSH_simplified_protocol_diagram-2.png)
+
+An SSH key is a cryptographically secure identifier. It’s like a really long password used to identify your machine, which can be used by GitHub without having to type in your username and password every time.
 
 
 - [Check for Existing SSH Keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/checking-for-existing-ssh-keys)
@@ -176,13 +180,20 @@ git push origin master
   ```
   > Generating public/private ed25519 key pair.
   ```
-<br/>
 
-- **Link SSH Key with GitHub**
-  - Add the public key to your account on [GitHub.com](https://github.com/chxtio) to enable authentication for Git operations over SSH.
-    - In GitHub, navigate to **Settings -> SSH and GPG keys -> New SSH Key**.
-    - Name the key with a useful description of where it came from.
-    - Copy the public SSH key from the terminal and paste it into the GitHub key section:
+  - Show the SSH key and copy it to your clipboard:
   ```bash
   cat ~/.ssh/id_ed25519.pub
-  ```
+    ```
+
+- **Link SSH Key with GitHub to enable authentication for Git operations over SSH**
+    - In GitHub, navigate to [**Settings -> SSH and GPG keys -> New SSH Key**](https://github.com/settings/ssh/new): 
+    - Name the key with a useful description of where it came from.
+    - Use the output of `cat ~/.ssh/id_ed25519.pub` and paste it the Key section
+    ![picture 2](https://i.imgur.com/gdfbJKj.png)  
+
+    - Confirm that your SSH key is connected to your GitHub account
+    ```bash
+    ssh -T git@github.com
+    ```
+
