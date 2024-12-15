@@ -196,4 +196,7 @@ An SSH key is a cryptographically secure identifier. It’s like a really long p
     ```bash
     ssh -T git@github.com
     ```
-
+    - if successful, you should see:
+    ```
+    Hi username! You've successfully authenticated, but GitHub does not provide shell access.
+    ```
