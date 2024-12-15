@@ -82,17 +82,15 @@ https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
   git status
   ```
 
-
 - Create a README file to describe the repository:
-
+  - We will use nano (`sudo apt install nano`), a simple, user-friendly text editor for the command line
   ```bash
   nano README.md
   # Add some text, example:
   This is a git repo
-  # Save the file by pressing CTRL + O, then press Enter
-  # Exit nano by pressing CTRL + X
+  # Save the file by pressing CTRL + X, then Y, then press Enter
   ```
-- Create a `sample.c` file:
+- Optional: Create a `sample.c` file:
 
   ```c
   #include<stdio.h>
@@ -108,7 +106,7 @@ https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 - Create and add files to the index. 
 
   ```bash
-  git add README
+  git add README.md
   git add sample.c
   ```
 ### Committing changes made to the index
@@ -119,7 +117,9 @@ https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
   ```
 ##  Creating a repository on GitHub
 - Create a repository on GitHub with the same name as your local repository (e.g., "Mytest").
-  - Then, connect your local repository to the GitHub repository (Replace `'user_name'` with your GitHub username):
+![picture 0](https://i.imgur.com/6hpahg2.png)
+
+- Connect your local repository to the GitHub repository (Replace `'user_name'` with your GitHub username):
 
   ```bash
   git remote add origin https://github.com/user_name/Mytest.git
