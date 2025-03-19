@@ -39,8 +39,8 @@ https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
   sudo apt install git
   ```
 
-## Configure GitHub
-- Configure GitHub, replacing `"Your name"` and `"your.email@example.com"` with your info (including the quotes) to link your local Git profile with GitHub
+## Configure Git
+- Configure Git, replacing `"Your name"` and `"your.email@example.com"` with your info (including the quotes) to link your local Git profile with GitHub
 
   ```bash
   git config --global user.name "Your Name"
