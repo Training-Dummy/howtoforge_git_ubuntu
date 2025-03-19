@@ -171,7 +171,7 @@ An SSH key is a cryptographically secure identifier. It’s like a really long p
 - [Generate a New SSH Key on Your Local Machine and Add it to the SSH Agent](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
   - Run the following command in the terminal to create a new SSH key using your GitHub email as a label:
   ```bash
-  ssh-keygen -t ed25519 -C "<youremail>"
+  ssh-keygen -t ed25519 -C "your.email@example.com"
   ```
   - When you're prompted to "Enter a file in which to save the key", you can press Enter to accept the default file location
   ```
