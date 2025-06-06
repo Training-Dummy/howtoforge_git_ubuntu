@@ -123,9 +123,14 @@ https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 - Connect your local repository to the GitHub repository (Replace `'user_name'` with your GitHub username):
 
+*Using HTTPS:*
   ```bash
   git remote add origin https://github.com/user_name/Mytest.git
   ```
+*Or using SSH (recommended if you have an [SSH key](#creating-an-ssh-key) set up):*
+```bash
+git remote add origin git@github.com:user_name/Mytest.git
+```
 
 ## Pushing files from a local repository to a GitHub repository
 - Push the local repository contents to GitHub
